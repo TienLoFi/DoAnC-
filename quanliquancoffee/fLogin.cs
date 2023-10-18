@@ -93,5 +93,10 @@ namespace quanliquancoffee
         {
             Application.Exit();
         }
+
+        private void txtPassWord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,6 +49,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(324, 26);
             this.txtName.TabIndex = 1;
+            this.txtName.Text = "k3";
             // 
             // txtPassWord
             // 
@@ -57,7 +58,9 @@
             this.txtPassWord.PasswordChar = '*';
             this.txtPassWord.Size = new System.Drawing.Size(324, 26);
             this.txtPassWord.TabIndex = 2;
+            this.txtPassWord.Text = "1";
             this.txtPassWord.UseSystemPasswordChar = true;
+            this.txtPassWord.TextChanged += new System.EventHandler(this.txtPassWord_TextChanged);
             // 
             // linkLabel1
             // 

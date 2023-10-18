@@ -1,4 +1,4 @@
-﻿using QuanLyQuanCafe.DAO;
+﻿using quanliquancoffee.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;
