@@ -74,14 +74,14 @@
             this.hỗTrợToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1292, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1333, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // hệThÔNToolStripMenuItem
             // 
             this.hệThÔNToolStripMenuItem.Name = "hệThÔNToolStripMenuItem";
-            this.hệThÔNToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
+            this.hệThÔNToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
             this.hệThÔNToolStripMenuItem.Text = "Hệ Thống ";
             this.hệThÔNToolStripMenuItem.Click += new System.EventHandler(this.hệThÔNToolStripMenuItem_Click);
             // 
@@ -91,27 +91,27 @@
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(187, 29);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(187, 30);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông Tin Tài Khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(265, 34);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(265, 34);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // hỗTrợToolStripMenuItem
             // 
             this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(81, 30);
             this.hỗTrợToolStripMenuItem.Text = "Hỗ Trợ";
             // 
             // panel1
@@ -150,14 +150,15 @@
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(110, 26);
             this.discount.TabIndex = 4;
+            this.discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.discount.ValueChanged += new System.EventHandler(this.discount_ValueChanged);
             // 
             // btnSwitchTable
             // 
             this.btnSwitchTable.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSwitchTable.Location = new System.Drawing.Point(17, 3);
+            this.btnSwitchTable.Location = new System.Drawing.Point(48, 11);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(151, 36);
+            this.btnSwitchTable.Size = new System.Drawing.Size(113, 36);
             this.btnSwitchTable.TabIndex = 2;
             this.btnSwitchTable.Text = "Chuyển Bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
@@ -166,7 +167,7 @@
             // btnDiscount
             // 
             this.btnDiscount.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDiscount.Location = new System.Drawing.Point(254, 3);
+            this.btnDiscount.Location = new System.Drawing.Point(254, 11);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(110, 36);
             this.btnDiscount.TabIndex = 2;
@@ -177,9 +178,9 @@
             // payment
             // 
             this.payment.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.payment.Location = new System.Drawing.Point(473, 16);
+            this.payment.Location = new System.Drawing.Point(465, 3);
             this.payment.Name = "payment";
-            this.payment.Size = new System.Drawing.Size(119, 55);
+            this.payment.Size = new System.Drawing.Size(154, 76);
             this.payment.TabIndex = 2;
             this.payment.Text = "Thanh Toán";
             this.payment.UseVisualStyleBackColor = true;
@@ -187,9 +188,9 @@
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(17, 45);
+            this.cbSwitchTable.Location = new System.Drawing.Point(48, 53);
             this.cbSwitchTable.Name = "cbSwitchTable";
-            this.cbSwitchTable.Size = new System.Drawing.Size(151, 28);
+            this.cbSwitchTable.Size = new System.Drawing.Size(113, 28);
             this.cbSwitchTable.TabIndex = 0;
             this.cbSwitchTable.SelectedIndexChanged += new System.EventHandler(this.cbbtypefood_SelectedIndexChanged);
             // 
@@ -238,9 +239,9 @@
             // btnAddfood
             // 
             this.btnAddfood.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAddfood.Location = new System.Drawing.Point(482, 17);
+            this.btnAddfood.Location = new System.Drawing.Point(464, 5);
             this.btnAddfood.Name = "btnAddfood";
-            this.btnAddfood.Size = new System.Drawing.Size(119, 55);
+            this.btnAddfood.Size = new System.Drawing.Size(154, 76);
             this.btnAddfood.TabIndex = 2;
             this.btnAddfood.Text = "Thêm Món ";
             this.btnAddfood.UseVisualStyleBackColor = true;
@@ -249,7 +250,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(13, 40);
+            this.label2.Location = new System.Drawing.Point(15, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 1;
@@ -296,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 691);
+            this.ClientSize = new System.Drawing.Size(1333, 691);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

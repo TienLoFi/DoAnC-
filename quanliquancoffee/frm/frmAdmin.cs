@@ -1,7 +1,9 @@
-﻿using System;
+﻿using quanliquancoffee.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,6 @@ namespace quanliquancoffee.frm
         {
             InitializeComponent();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -38,6 +39,16 @@ namespace quanliquancoffee.frm
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tcTable_Click(object sender, EventArgs e)
         {
 
         }

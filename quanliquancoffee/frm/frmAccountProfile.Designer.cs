@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txbUserName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.CCCV = new System.Windows.Forms.Panel();
             this.txbdisplayName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,6 +73,14 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txbUserName
+            // 
+            this.txbUserName.Location = new System.Drawing.Point(221, 15);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.ReadOnly = true;
+            this.txbUserName.Size = new System.Drawing.Size(457, 26);
+            this.txbUserName.TabIndex = 2;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -83,14 +91,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Đăng Nhập:";
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
-            // 
-            // txbUserName
-            // 
-            this.txbUserName.Location = new System.Drawing.Point(221, 15);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(457, 26);
-            this.txbUserName.TabIndex = 2;
             // 
             // CCCV
             // 
@@ -199,23 +199,25 @@
             // 
             // btnExitaccount
             // 
+            this.btnExitaccount.BackColor = System.Drawing.Color.Red;
             this.btnExitaccount.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExitaccount.Location = new System.Drawing.Point(612, 400);
+            this.btnExitaccount.Location = new System.Drawing.Point(638, 400);
             this.btnExitaccount.Name = "btnExitaccount";
-            this.btnExitaccount.Size = new System.Drawing.Size(90, 38);
+            this.btnExitaccount.Size = new System.Drawing.Size(150, 38);
             this.btnExitaccount.TabIndex = 7;
             this.btnExitaccount.Text = "Thoát";
-            this.btnExitaccount.UseVisualStyleBackColor = true;
+            this.btnExitaccount.UseVisualStyleBackColor = false;
             this.btnExitaccount.Click += new System.EventHandler(this.btnExitaccount_Click);
             // 
             // btnupdate
             // 
-            this.btnupdate.Location = new System.Drawing.Point(497, 400);
+            this.btnupdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnupdate.Location = new System.Drawing.Point(414, 400);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(90, 38);
+            this.btnupdate.Size = new System.Drawing.Size(188, 38);
             this.btnupdate.TabIndex = 7;
             this.btnupdate.Text = "Cập Nhật";
-            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.UseVisualStyleBackColor = false;
             // 
             // frmAccountProfile
             // 

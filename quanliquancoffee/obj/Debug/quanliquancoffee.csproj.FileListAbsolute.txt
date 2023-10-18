@@ -3,7 +3,6 @@ D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\bin\Debug\quanliqu
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\bin\Debug\quanliquancoffee.pdb
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.csproj.AssemblyReference.cache
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.csproj.SuggestedBindingRedirects.cache
-D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.Form1.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.Properties.Resources.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.csproj.GenerateResource.cache
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.csproj.CoreCompileInputs.cache
@@ -12,3 +11,4 @@ D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliqu
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.frmMainInterface.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.frmAccountProfile.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.frmAdmin.resources
+D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.fLogin.resources
