@@ -1,4 +1,5 @@
 ﻿using quanliquancoffee.DAO;
+using quanliquancoffee.DTO;
 using quanliquancoffee.frm;
 using System;
 using System.Collections.Generic;
@@ -66,8 +67,8 @@ namespace quanliquancoffee
             string passWord = txtPassWord.Text;
             if (Login(userName, passWord))
             {
-               // AcountDAO loginAccount = AcountDAO.Instance.GetAccountByUserName(userName);
-                frmMainInterface f = new frmMainInterface();
+                Account loginAccount = AcountDAO.Instance.GetAccountByUserName(userName);
+                frmMainInterface f = new frmMainInterface(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

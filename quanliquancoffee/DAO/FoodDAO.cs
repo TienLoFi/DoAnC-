@@ -35,9 +35,9 @@ namespace quanliquancoffee.DAO
                 list.Add(food);
             }
 
-            return list;
+            return list;    
         }
-
+        //lấy danh sách food
         public List<Food> GetListFood()
         {
             List<Food> list = new List<Food>();
@@ -54,6 +54,9 @@ namespace quanliquancoffee.DAO
 
             return list;
         }
+
+
+    
 
         public List<Food> SearchFoodByName(string name)
         {
@@ -88,7 +91,7 @@ namespace quanliquancoffee.DAO
 
             return result > 0;
         }
-
+    
         public bool DeleteFood(int idFood)
         {
             BillInfoDAO.Instance.DeleteBillInfoByFoodID(idFood);
@@ -97,6 +100,10 @@ namespace quanliquancoffee.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
+        }
+        public void DeleteFoodByCategoryID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("delete dbo.Food WHERE idCategory = " + id);
         }
     }
 }

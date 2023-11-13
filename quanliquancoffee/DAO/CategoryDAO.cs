@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace quanliquancoffee.DAO
 
         private CategoryDAO() { }
 
+   
+
+        //lấy danh sách danh mục
         public List<Category> GetListCategory()
         {
             List<Category> list = new List<Category>();
@@ -36,7 +40,6 @@ namespace quanliquancoffee.DAO
 
             return list;
         }
-
         public Category GetCategoryByID(int id)
         {
             Category category = null;
@@ -52,6 +55,32 @@ namespace quanliquancoffee.DAO
             }
 
             return category;
+        }
+
+        public bool InsertCategory(string name)
+        {
+            string query = string.Format("INSERT dbo.FoodCategory ( name  )VALUES  ( N'{0}')", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateCategory( string name, int id)
+        {
+            string query = string.Format("UPDATE dbo.FoodCategory SET name = N'{0}' WHERE id = {1}", name, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteCategory(int idCategory)
+        {
+            FoodDAO.Instance.DeleteFoodByCategoryID(idCategory);
+
+            string query = string.Format("Delete FoodCategory where id = {0}", idCategory);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }
