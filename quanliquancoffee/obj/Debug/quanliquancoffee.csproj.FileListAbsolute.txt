@@ -12,3 +12,4 @@ D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliqu
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.frmAccountProfile.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.frmAdmin.resources
 D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.fLogin.resources
+D:\Workspace\WED\C#\hangoctien_2121110200_c#\quanliquancoffee\obj\Debug\quanliquancoffee.frm.HoaDon.resources

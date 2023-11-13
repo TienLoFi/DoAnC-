@@ -20,6 +20,7 @@ namespace quanliquancoffee.frm
         BindingSource CategoryList = new BindingSource();
         BindingSource TableList = new BindingSource();
 
+        public Account loginAccount;
         public frmAdmin()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace quanliquancoffee.frm
 
         void LoadData()
         {
-            //dtgvAccount.DataSource = accountList;
+            dtgvAccount.DataSource = accountList;
             dtgvCategory.DataSource = CategoryList;
             dtgvtable.DataSource = TableList;
 
@@ -38,27 +39,28 @@ namespace quanliquancoffee.frm
             LoadDateTimePickerBill();
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadListFood();
-            //LoadAccount();
+            LoadAccount();
             LoadListTable2();
             AddFoodBinding();
-            //AddAccountBinding();
+            AddAccountBinding();
             LoadListCategory();
             AddTableBinding();
             AddCategoryBinding();
             LoadCategoryIntoCombobox(cbFoodCategory);
         }
-        //void AddAccountBinding()
-        //{
-        //    txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
-        //    txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
-        //    nmStatus.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Status", true, DataSourceUpdateMode.Never));
-        //}
+        void AddAccountBinding()
+        {
+            txbUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            nmStatus.DataBindings.Add(new Binding("Value", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+        }
 
-        //void LoadAccount()
-        //{
-        //    accountList.DataSource = AcountDAO.Instance.GetListAccount();
-        //}
         #region methods
+
+        void LoadAccount()
+        {
+            accountList.DataSource = AcountDAO.Instance.GetListAccount();
+        }
         List<Food> SearchFoodByName(string name)
         {
             List<Food> listFood = FoodDAO.Instance.SearchFoodByName(name);
@@ -76,6 +78,65 @@ namespace quanliquancoffee.frm
         void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
         {
             dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
+        }
+
+
+        void AddAccount(string userName, string displayName, int type)
+        {
+            if (AcountDAO.Instance.InsertAccount(userName, displayName, type))
+            {
+                MessageBox.Show("Thêm tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm tài khoản thất bại");
+            }
+
+            LoadAccount();
+        }
+        void EditAccount(string userName, string displayName, int type)
+        {
+            if (AcountDAO.Instance.UpdateAccount(userName, displayName, type))
+            {
+                MessageBox.Show("Cập nhật tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật tài khoản thất bại");
+            }
+
+            LoadAccount();
+        }
+        void ResetPass(string userName)
+        {
+            if (AcountDAO.Instance.ResetPassword(userName))
+            {
+                MessageBox.Show("Đặt lại mật khẩu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đặt lại mật khẩu thất bại");
+            }
+            LoadAccount();
+        }
+
+        void DeleteAccount(string userName)
+        {
+            if (loginAccount.UserName.Equals(userName))
+            {
+                MessageBox.Show("Vui lòng đừng xóa chính bạn chứ");
+                return;
+            }
+            if (AcountDAO.Instance.DeleteAccount(userName))
+            {
+                MessageBox.Show("Xóa tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xóa tài khoản thất bại");
+            }
+
+            LoadAccount();
         }
         //hiển thị danh sách food
         void LoadListFood()
@@ -174,64 +235,7 @@ namespace quanliquancoffee.frm
         {
 
         }
-        //void AddAccount(string userName, string displayName, int type)
-        //{
-        //    if (AcountDAO.Instance.InsertAccount(userName, displayName, type))
-        //    {
-        //        MessageBox.Show("Thêm tài khoản thành công");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Thêm tài khoản thất bại");
-        //    }
-
-        //    LoadAccount();
-        //}
-  
-        //void EditAccount(string userName, string displayName, int type)
-        //{
-        //    if (AcountDAO.Instance.UpdateAccount(userName, displayName, type))
-        //    {
-        //        MessageBox.Show("Cập nhật tài khoản thành công");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Cập nhật tài khoản thất bại");
-        //    }
-
-        //    LoadAccount();
-        //}
-
-        //void DeleteAccount(string userName)
-        //{
-        //    if (loginAccount.UserName.Equals(userName))
-        //    {
-        //        MessageBox.Show("Vui lòng đừng xóa chính bạn chứ");
-        //        return;
-        //    }
-        //    if (AcountDAO.Instance.DeleteAccount(userName))
-        //    {
-        //        MessageBox.Show("Xóa tài khoản thành công");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Xóa tài khoản thất bại");
-        //    }
-
-        //    LoadAccount();
-        //}
-
-        //void ResetPass(string userName)
-        //{
-        //    if (AcountDAO.Instance.ResetPassword(userName))
-        //    {
-        //        MessageBox.Show("Đặt lại mật khẩu thành công");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Đặt lại mật khẩu thất bại");
-        //    }
-        //}
+     
         #endregion
 
         private void txbFoodID_TextChanged(object sender, EventArgs e)
@@ -531,26 +535,77 @@ namespace quanliquancoffee.frm
 
         private void btnDeleteAcount_Click(object sender, EventArgs e)
         {
-            //string userName = txbUserName.Text;
+            string userName = txbUserName.Text;
 
-            //DeleteAccount(userName);
+            DeleteAccount(userName);
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
-            //string userName = txbUserName.Text;
-            //string displayName = txbDisplayName.Text;
-            //int type = (int)nmStatus.Value;
+            string userName = txbUserName.Text;
+            string displayName = txbDisplayName.Text;
+            int type = (int)nmStatus.Value;
 
-            //EditAccount(userName, displayName, type);
+            EditAccount(userName, displayName, type);
         }
         private void btnAddAcount_Click(object sender, EventArgs e)
         {
-            //string userName = txbUserName.Text;
-            //string displayName = txbDisplayName.Text;
-            //int type = (int)nmStatus.Value;
+            string userName = txbUserName.Text;
+            string displayName = txbDisplayName.Text;
+            int type = (int)nmStatus.Value;
 
-            //AddAccount(userName, displayName, type);
+            AddAccount(userName, displayName, type);
+        }
+
+        private void btnResetAcount_Click(object sender, EventArgs e)
+        {
+            string userName = txbUserName.Text;
+
+            ResetPass(userName);
+        }
+
+        private void btnFirstBillPage_Click(object sender, EventArgs e)
+        {
+            txbPageBill.Text = "1";
+        }
+
+        private void btnLastBillPage_Click(object sender, EventArgs e)
+        {
+            int sumRecord = BillDAO.Instance.GetNumBillListByDate(dtpkFromDate.Value, dtpkToDate.Value);
+
+            int lastPage = sumRecord / 10;
+
+            if (sumRecord % 10 != 0)
+                lastPage++;
+
+            txbPageBill.Text = lastPage.ToString();
+        }
+
+        private void txbPageBill_TextChanged(object sender, EventArgs e)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDateAndPage(dtpkFromDate.Value, dtpkToDate.Value, Convert.ToInt32(txbPageBill.Text));
+
+        }
+
+        private void btnPreviours_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txbPageBill.Text);
+
+            if (page > 1)
+                page--;
+
+            txbPageBill.Text = page.ToString();
+        }
+
+        private void btnNextBillPage_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txbPageBill.Text);
+            int sumRecord = BillDAO.Instance.GetNumBillListByDate(dtpkFromDate.Value, dtpkToDate.Value);
+
+            if (page < sumRecord)
+                page++;
+
+            txbPageBill.Text = page.ToString();
         }
     }
 }

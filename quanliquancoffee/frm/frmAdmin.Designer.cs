@@ -167,6 +167,11 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.btnFirstBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnPreviours = new System.Windows.Forms.Button();
+            this.btnNextBillPage = new System.Windows.Forms.Button();
+            this.txbPageBill = new System.Windows.Forms.TextBox();
             this.tcBill.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -253,7 +258,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(400, 2);
+            this.btnPrint.Location = new System.Drawing.Point(340, 1);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(106, 29);
             this.btnPrint.TabIndex = 1;
@@ -1317,13 +1322,14 @@
             // 
             // btnResetAcount
             // 
-            this.btnResetAcount.Location = new System.Drawing.Point(287, 180);
+            this.btnResetAcount.BackColor = System.Drawing.Color.Snow;
+            this.btnResetAcount.Location = new System.Drawing.Point(244, 180);
             this.btnResetAcount.Name = "btnResetAcount";
-            this.btnResetAcount.Size = new System.Drawing.Size(150, 69);
-            this.btnResetAcount.TabIndex = 5;
-            this.btnResetAcount.Text = "Đặt Lại Mật Khẩu";
-            this.btnResetAcount.UseVisualStyleBackColor = true;
-            this.btnResetAcount.Click += new System.EventHandler(this.btnShowAcount_Click);
+            this.btnResetAcount.Size = new System.Drawing.Size(193, 45);
+            this.btnResetAcount.TabIndex = 6;
+            this.btnResetAcount.Text = "Đặt Lại Mật Khẩu ";
+            this.btnResetAcount.UseVisualStyleBackColor = false;
+            this.btnResetAcount.Click += new System.EventHandler(this.btnResetAcount_Click);
             // 
             // panel70
             // 
@@ -1391,7 +1397,6 @@
             // 
             this.txbUserName.Location = new System.Drawing.Point(153, 13);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.ReadOnly = true;
             this.txbUserName.Size = new System.Drawing.Size(278, 26);
             this.txbUserName.TabIndex = 2;
             // 
@@ -1447,11 +1452,67 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // btnFirstBillPage
+            // 
+            this.btnFirstBillPage.Location = new System.Drawing.Point(34, 618);
+            this.btnFirstBillPage.Name = "btnFirstBillPage";
+            this.btnFirstBillPage.Size = new System.Drawing.Size(75, 37);
+            this.btnFirstBillPage.TabIndex = 1;
+            this.btnFirstBillPage.Text = "First";
+            this.btnFirstBillPage.UseVisualStyleBackColor = true;
+            this.btnFirstBillPage.Click += new System.EventHandler(this.btnFirstBillPage_Click);
+            // 
+            // btnLastBillPage
+            // 
+            this.btnLastBillPage.Location = new System.Drawing.Point(879, 618);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(75, 37);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            // 
+            // btnPreviours
+            // 
+            this.btnPreviours.Location = new System.Drawing.Point(115, 618);
+            this.btnPreviours.Name = "btnPreviours";
+            this.btnPreviours.Size = new System.Drawing.Size(86, 37);
+            this.btnPreviours.TabIndex = 3;
+            this.btnPreviours.Text = "Previours";
+            this.btnPreviours.UseVisualStyleBackColor = true;
+            this.btnPreviours.Click += new System.EventHandler(this.btnPreviours_Click);
+            // 
+            // btnNextBillPage
+            // 
+            this.btnNextBillPage.Location = new System.Drawing.Point(798, 618);
+            this.btnNextBillPage.Name = "btnNextBillPage";
+            this.btnNextBillPage.Size = new System.Drawing.Size(75, 37);
+            this.btnNextBillPage.TabIndex = 4;
+            this.btnNextBillPage.Text = "Next";
+            this.btnNextBillPage.UseVisualStyleBackColor = true;
+            this.btnNextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            // 
+            // txbPageBill
+            // 
+            this.txbPageBill.Location = new System.Drawing.Point(452, 623);
+            this.txbPageBill.Name = "txbPageBill";
+            this.txbPageBill.ReadOnly = true;
+            this.txbPageBill.Size = new System.Drawing.Size(66, 26);
+            this.txbPageBill.TabIndex = 5;
+            this.txbPageBill.Text = "1";
+            this.txbPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbPageBill.TextChanged += new System.EventHandler(this.txbPageBill_TextChanged);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 610);
+            this.ClientSize = new System.Drawing.Size(955, 661);
+            this.Controls.Add(this.txbPageBill);
+            this.Controls.Add(this.btnNextBillPage);
+            this.Controls.Add(this.btnPreviours);
+            this.Controls.Add(this.btnLastBillPage);
+            this.Controls.Add(this.btnFirstBillPage);
             this.Controls.Add(this.tcAdmin);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1531,6 +1592,7 @@
             this.panel73.ResumeLayout(false);
             this.tcAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1661,7 +1723,6 @@
         private System.Windows.Forms.Panel panel73;
         private System.Windows.Forms.Panel panel74;
         private System.Windows.Forms.Panel panel75;
-        private System.Windows.Forms.Button btnResetAcount;
         private System.Windows.Forms.Panel panel69;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Panel panel76;
@@ -1673,5 +1734,11 @@
         private System.Windows.Forms.Button btnSearchFood;
         private System.Windows.Forms.TextBox txbStatus;
         private System.Windows.Forms.NumericUpDown nmStatus;
+        private System.Windows.Forms.Button btnResetAcount;
+        private System.Windows.Forms.Button btnFirstBillPage;
+        private System.Windows.Forms.Button btnLastBillPage;
+        private System.Windows.Forms.Button btnPreviours;
+        private System.Windows.Forms.Button btnNextBillPage;
+        private System.Windows.Forms.TextBox txbPageBill;
     }
 }

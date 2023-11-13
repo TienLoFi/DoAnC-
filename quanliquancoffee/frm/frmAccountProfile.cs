@@ -28,6 +28,7 @@ namespace quanliquancoffee.frm
             LoginAccount = acc; 
         }
 
+   
         void ChangeAccount(Account acc)
         {
             txbUserName.Text = LoginAccount.UserName;
@@ -58,6 +59,7 @@ namespace quanliquancoffee.frm
                 {
                     MessageBox.Show("Vui lòng điền đúng mật khấu");
                 }
+             
             }
         }
 

@@ -182,7 +182,7 @@ namespace quanliquancoffee.frm
         private void hệThÔNToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAdmin f =   new frmAdmin();
-          //  f.loginAccount = LoginAccount;
+           f.loginAccount = LoginAccount;
             f.InsertFood += f_InsertFood;
             f.DeleteFood += f_DeleteFood;
             f.UpdateFood += f_UpdateFood;
