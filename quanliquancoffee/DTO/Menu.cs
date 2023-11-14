@@ -23,6 +23,7 @@ namespace quanliquancoffee.DTO
         {
             this.FoodName = row["Name"].ToString();
             this.Count = (int)row["count"];
+         //   this.Count = (int)row["discount"];
             this.Price = (float)Convert.ToDouble(row["price"].ToString());
             this.TotalPrice = (float)Convert.ToDouble(row["totalPrice"].ToString());
         }

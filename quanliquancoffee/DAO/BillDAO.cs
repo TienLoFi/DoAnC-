@@ -17,6 +17,24 @@ namespace quanliquancoffee.DAO
             get { if (instance == null) instance = new BillDAO(); return BillDAO.instance; }
             private set { BillDAO.instance = value; }
         }
+
+        public List<Bill> GetListBill()
+        {
+            List<Bill> list = new List<Bill>();
+
+            string query = "select * from Bill";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Bill bill = new Bill(item);
+                list.Add(bill);
+            }
+
+            return list;
+        }
+
         private BillDAO() { }
         public int GetUncheckBillIDByTableID(int id)
         {

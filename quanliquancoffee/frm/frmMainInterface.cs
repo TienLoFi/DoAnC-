@@ -21,11 +21,12 @@ namespace quanliquancoffee.frm
             get { return loginAccount; }
             set { loginAccount = value; ChangeAccount(loginAccount.Type); }
         }
-        
+
+        public static frmMainInterface CurrentInstance { get; private set; }
         public frmMainInterface(Account acc)
-        { 
+        {
             InitializeComponent();
-          
+            CurrentInstance = this;
             this.LoginAccount = acc;
             LoadTable();
             LoadComboboxTable(cbSwitchTable);
@@ -37,7 +38,7 @@ namespace quanliquancoffee.frm
             thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
         }
         #region Method 
-        void LoadTable ()
+        public void LoadTable()
         {
             flpTable.Controls.Clear();
 
@@ -60,7 +61,7 @@ namespace quanliquancoffee.frm
                         break;
                 }
 
-              flpTable.Controls.Add(btn);
+                flpTable.Controls.Add(btn);
             }
         }
         void LoadCategory()
@@ -76,7 +77,7 @@ namespace quanliquancoffee.frm
             cbFood.DataSource = listFood;
             cbFood.DisplayMember = "Name";
         }
-        void ShowBill(int id)
+        public void ShowBill(int id)
         {
             lsvBill.Items.Clear();
             List<quanliquancoffee.DTO.Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
@@ -181,8 +182,8 @@ namespace quanliquancoffee.frm
         }
         private void hệThÔNToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdmin f =   new frmAdmin();
-           f.loginAccount = LoginAccount;
+            frmAdmin f = new frmAdmin();
+            f.loginAccount = LoginAccount;
             f.InsertFood += f_InsertFood;
             f.DeleteFood += f_DeleteFood;
             f.UpdateFood += f_UpdateFood;
@@ -219,7 +220,7 @@ namespace quanliquancoffee.frm
         // danh mục \
         void f_UpdateCategory(object sender, EventArgs e)
         {
-           
+
             if (lsvBill.Tag != null)
                 ShowBill((lsvBill.Tag as Table).ID);
         }
@@ -298,24 +299,51 @@ namespace quanliquancoffee.frm
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            Table table = lsvBill.Tag as Table;
+            Table table = lsvBill?.Tag as Table;
 
-            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
-            int discount = (int)nmDisCount.Value;
-
-            double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0].Replace(".",""));
-            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
-
-            if (idBill != -1)
+            if (table != null && table.ID != -1)
             {
-                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-                {
-                    BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
-                    ShowBill(table.ID);
+                int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+                int discount = (int)nmDisCount.Value;
 
-                    LoadTable();    
+                double totalPrice = 0;
+
+                if (double.TryParse(txbTotalPrice.Text.Split(',')[0].Replace(".", ""), out totalPrice))
+                {
+                    double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+
+                    if (idBill != -1)
+                    {
+                        frmHoaDon frmhoadon = new frmHoaDon();
+                        frmhoadon.TableID = table.ID;
+                        frmhoadon.ShowBill(table.ID, discount);
+                        frmhoadon.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bàn này không có món để thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Giá trị tổng tiền không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Bạn Chưa Chọn Bàn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void lsvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nmFoodCount_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -214,7 +214,7 @@ namespace quanliquancoffee.frm
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void tcTable_Click(object sender, EventArgs e)
@@ -606,6 +606,12 @@ namespace quanliquancoffee.frm
                 page++;
 
             txbPageBill.Text = page.ToString();
+        }
+
+        private void btnRePort_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoThang frmbaocaorp = new frmBaoCaoThang(dtpkFromDate.Value, dtpkToDate.Value);
+            frmbaocaorp.ShowDialog();
         }
     }
 }
