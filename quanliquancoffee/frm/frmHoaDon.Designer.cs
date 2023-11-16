@@ -49,14 +49,16 @@
             this.txbThanhTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panelContainingInvoice = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContainingInvoice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mistral", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 18);
+            this.label1.Location = new System.Drawing.Point(227, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(244, 57);
             this.label1.TabIndex = 2;
@@ -84,7 +86,7 @@
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(597, 720);
+            this.btnThanhToan.Location = new System.Drawing.Point(632, 664);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(135, 33);
             this.btnThanhToan.TabIndex = 6;
@@ -94,7 +96,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(289, 720);
+            this.btnPrint.Location = new System.Drawing.Point(380, 664);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(114, 33);
             this.btnPrint.TabIndex = 7;
@@ -104,7 +106,7 @@
             // 
             // btnCancelCheck
             // 
-            this.btnCancelCheck.Location = new System.Drawing.Point(40, 720);
+            this.btnCancelCheck.Location = new System.Drawing.Point(120, 664);
             this.btnCancelCheck.Name = "btnCancelCheck";
             this.btnCancelCheck.Size = new System.Drawing.Size(112, 33);
             this.btnCancelCheck.TabIndex = 8;
@@ -229,6 +231,7 @@
             // panelContainingInvoice
             // 
             this.panelContainingInvoice.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelContainingInvoice.Controls.Add(this.pictureBox1);
             this.panelContainingInvoice.Controls.Add(this.label1);
             this.panelContainingInvoice.Controls.Add(this.lsvBill1);
             this.panelContainingInvoice.Controls.Add(this.label2);
@@ -243,8 +246,18 @@
             this.panelContainingInvoice.Controls.Add(this.txbDiscount);
             this.panelContainingInvoice.Location = new System.Drawing.Point(12, 12);
             this.panelContainingInvoice.Name = "panelContainingInvoice";
-            this.panelContainingInvoice.Size = new System.Drawing.Size(755, 695);
+            this.panelContainingInvoice.Size = new System.Drawing.Size(755, 646);
             this.panelContainingInvoice.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::quanliquancoffee.Properties.Resources._08417e8416605;
+            this.pictureBox1.Location = new System.Drawing.Point(477, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 77);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // frmHoaDon
             // 
@@ -262,6 +275,7 @@
             this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.panelContainingInvoice.ResumeLayout(false);
             this.panelContainingInvoice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +302,6 @@
         private System.Windows.Forms.TextBox txbThanhTien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panelContainingInvoice;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

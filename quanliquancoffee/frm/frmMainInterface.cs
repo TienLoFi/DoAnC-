@@ -54,10 +54,10 @@ namespace quanliquancoffee.frm
                 switch (item.Status)
                 {
                     case "Trống":
-                        btn.BackColor = Color.Aqua;
+                        btn.BackColor = Color.Gray;
                         break;
                     default:
-                        btn.BackColor = Color.LightPink;
+                        btn.BackColor = Color.HotPink;
                         break;
                 }
 
@@ -342,6 +342,39 @@ namespace quanliquancoffee.frm
         }
 
         private void nmFoodCount_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Giờ Hiện Tại:" + DateTime.Now.ToString("hh:mm:ss");
+        }
+        private void timer1_tick(object sender, EventArgs e)
+        {
+         
+        }
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

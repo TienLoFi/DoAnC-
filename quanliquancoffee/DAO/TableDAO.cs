@@ -19,8 +19,8 @@ namespace quanliquancoffee.DAO
             private set { TableDAO.instance = value; }
         }
 
-        public static int TableWidth = 90;
-        public static int TableHeight = 90;
+        public static int TableWidth =110;
+        public static int TableHeight = 110;
 
         private TableDAO() { }
 

@@ -613,5 +613,10 @@ namespace quanliquancoffee.frm
             frmBaoCaoThang frmbaocaorp = new frmBaoCaoThang(dtpkFromDate.Value, dtpkToDate.Value);
             frmbaocaorp.ShowDialog();
         }
+
+        private void tcAcount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

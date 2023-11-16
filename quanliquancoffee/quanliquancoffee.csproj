@@ -151,6 +151,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -176,6 +177,90 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lovepik_com-610905449-Drinking tea in the summer heat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_1828479.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_1828666.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nameicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14758PICxXbVJTz6hzy5t_PIC2018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\08417e8416605.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_1503145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information_8213193.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service_3930372.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_9605949.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch_466154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycle_2588700.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_4315609.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward-button_2267990.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward-button_2267990 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frequency_2961248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_318493.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow_318495.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-forward_7344893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-left-arrows-symbol_54227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-chevron_6015766.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_43156091.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_6861362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen_10263173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_159604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_751463.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -384,7 +384,7 @@ CREATE PROC [dbo].[USP_GetListBillByDate]
 AS 
 BEGIN
 
-SELECT t.name AS [Tên bàn], b.totalPrice AS [Tổng tiền], DateCheckIn AS [Ngày vào], DateCheckOut AS [Ngày ra], discount AS [Giảm giá]
+SELECT t.name AS [Tên bàn], b.totalPrice AS [Tổng tiền(đ)], DateCheckIn AS [Ngày vào], DateCheckOut AS [Ngày ra], discount AS [Giảm giá(%)]
 	FROM dbo.Bill AS b,dbo.TableFood AS t
 	WHERE DateCheckIn >= @checkIn AND DateCheckOut <= @checkOut AND b.status = 1
 	AND t.id = b.idTable
@@ -433,7 +433,7 @@ CREATE FUNCTION [dbo].[fuConvertToUnsign1] ( @strInput NVARCHAR(4000) ) RETURNS 
 select *from Bill
 
 
-DELETE FROM FoodCategory WHERE id = 8;
+DELETE FROM Bill
 
 
 GO
@@ -446,7 +446,7 @@ BEGIN
 	DECLARE @selectRows INT = @pageRows
 	DECLARE @exceptRows INT = (@page - 1) * @pageRows
 	
-	;WITH BillShow AS( SELECT b.ID, t.name AS [Tên bàn], b.totalPrice AS [Tổng tiền], DateCheckIn AS [Ngày vào], DateCheckOut AS [Ngày ra], discount AS [Giảm giá]
+	;WITH BillShow AS( SELECT b.ID, t.name AS [Tên bàn], b.totalPrice AS [Tổng tiền(đ)], DateCheckIn AS [Ngày vào], DateCheckOut AS [Ngày ra], discount AS [Giảm giá(%)]
 	FROM dbo.Bill AS b,dbo.TableFood AS t
 	WHERE DateCheckIn >= @checkIn AND DateCheckOut <= @checkOut AND b.status = 1
 	AND t.id = b.idTable)
@@ -454,6 +454,7 @@ BEGIN
 	SELECT TOP (@selectRows) * FROM BillShow WHERE id NOT IN (SELECT TOP (@exceptRows) id FROM BillShow)
 END
 GO
+
 ----------------------------------------------------------
 GO
 CREATE PROC [dbo].[USP_GetNumBillByDate]
@@ -466,4 +467,16 @@ BEGIN
 	AND t.id = b.idTable
 END
 GO
-SELECT f.name, bi.count, f.price, b.discount, f.price*bi.count AS totalPrice FROM dbo.BillInfo AS bi, dbo.Bill AS b, dbo.Food AS f WHERE bi.idBill = b.id AND bi.idFood = f.id AND b.status = 0 AND b.idTable = 139
+
+
+CREATE PROC [dbo].[USP_GetListBillByDateReport]
+@checkIn date, @checkOut date
+AS 
+BEGIN
+
+SELECT t.name , b.totalPrice , DateCheckIn, DateCheckOut , discount 
+	FROM dbo.Bill AS b,dbo.TableFood AS t
+	WHERE DateCheckIn >= @checkIn AND DateCheckOut <= @checkOut AND b.status = 1
+	AND t.id = b.idTable
+	END
+GO
